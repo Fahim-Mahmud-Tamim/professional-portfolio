@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fahim Mahmud Tamim | Portfolio</title>
+  <meta name="description" content="Portfolio of Fahim Mahmud Tamim, CSE student at University of Asia Pacific, Dhaka.">
+  <meta property="og:title" content="Fahim Mahmud Tamim | Portfolio">
+  <meta property="og:description" content="CSE student and web developer. Projects, resume and contact.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/profile.jpg">
+  <meta name="theme-color" content="#0b0b11">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/theme.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a href="#home" class="brand" id="brand"></a>
+    <nav id="menu" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <div class="nav-tools">
+      <button type="button" id="themeBtn" class="icon-btn" aria-label="Switch theme"></button>
+      <button type="button" id="menuBtn" class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 1. HERO -->
+    <section id="home" class="hero wrap">
+      <div class="hero-text">
+        <p class="hello" id="hello"></p>
+        <h1 id="headline"></h1>
+        <p class="typed-line">I am a <span id="typed"></span><span class="caret" aria-hidden="true">|</span></p>
+        <p class="motive" id="motive"></p>
+        <div class="btns">
+          <a href="#projects" class="btn btn-main">View my projects</a>
+          <a id="heroResume" class="btn btn-ghost" download>Download resume</a>
+        </div>
+        <ul class="socials" id="socials"></ul>
+        <dl class="facts">
+          <div><dt>Based in</dt><dd id="location"></dd></div>
+          <div><dt>Studying at</dt><dd id="university"></dd></div>
+        </dl>
+      </div>
+      <figure class="portrait">
+        <div class="frame">
+          <img id="photo" alt="Portrait of Fahim Mahmud Tamim" width="480" height="600">
+          <div class="initials" id="initials" hidden></div>
+        </div>
+        <figcaption><span>Current chapter</span><strong id="degree"></strong></figcaption>
+      </figure>
+    </section>
+
+    <div class="strip" aria-hidden="true"><div class="strip-track" id="strip"></div></div>
+
+    <!-- 2. ABOUT -->
+    <section id="about" class="wrap block">
+      <h2>About me</h2>
+      <div class="about-grid">
+        <div id="aboutText"></div>
+        <ul class="stats" id="stats"></ul>
+      </div>
+    </section>
+
+    <!-- 3. PROJECTS -->
+    <section id="projects" class="wrap block">
+      <h2>Projects</h2>
+      <p class="sub">Every project links to its Git repository. Public repos from my GitHub are added automatically.</p>
+      <div class="toolbar">
+        <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+        <label class="search"><span class="sr">Search projects</span>
+          <input type="search" id="search" placeholder="Search projects">
+        </label>
+      </div>
+      <div class="cards" id="projectGrid"></div>
+      <p class="note" id="projectNote" role="status"></p>
+    </section>
+
+    <!-- 4. RESUME -->
+    <section id="resume" class="wrap block">
+      <h2>Resume</h2>
+      <p class="sub">Read it here or download the PDF.</p>
+      <div class="btns">
+        <a id="resumeOpen" class="btn btn-ghost" target="_blank" rel="noopener">Open in new tab</a>
+        <a id="resumeDl" class="btn btn-main" download>Download PDF</a>
+      </div>
+      <iframe id="resumeFrame" title="Resume preview"></iframe>
+      <p class="note">Preview blank? Put your resume at <code>public/assets/resume.pdf</code>.</p>
+    </section>
+
+    <!-- 5. SKILLS -->
+    <section id="skills" class="wrap block">
+      <h2>Skills</h2>
+      <div class="skill-grid" id="skillGrid"></div>
+    </section>
+
+    <!-- 6. EDUCATION -->
+    <section id="education" class="wrap block">
+      <h2>Education</h2>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- 7. CONTACT -->
+    <section id="contact" class="wrap block">
+      <h2>Contact</h2>
+      <p class="sub">Send me a message. It is saved on my server and I will reply by email.</p>
+      <form id="contactForm" class="form" novalidate>
+        <label>Name<input name="name" required maxlength="100" autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required maxlength="150" autocomplete="email"></label>
+        <label class="full">Message<textarea name="message" rows="5" required maxlength="3000"></textarea></label>
+        <div class="form-actions">
+          <button class="btn btn-main" type="submit" id="sendBtn">Send message</button>
+          <button class="btn btn-ghost" type="button" id="copyMail">Copy email</button>
+        </div>
+        <p class="form-status full" id="formStatus" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="foot wrap">
+    <span id="footer"></span>
+    <a href="#home">Back to top</a>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
